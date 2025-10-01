@@ -1,0 +1,170 @@
+{
+  "human_response_markdown": "Apple's latest iPhone experience is significantly enhanced by iOS 26, introducing a redesigned interface and powerful new capabilities, particularly in artificial intelligence.\n\n## Key Features and Improvements\n\n### iOS 26 Enhancements\niOS 26 elevates the overall iPhone experience with meaningful improvements to core applications and system functions [1]. This update aims to make the user experience more expressive and delightful, ensuring content remains the central focus while maintaining the familiar iOS interface [3].\n\n### Apple Intelligence\nA major addition is the integration of powerful Apple Intelligence capabilities. This includes features like Live Translation, which allows for on-the-go translation of text and audio [2]. This functionality is designed to facilitate communication across different languages within apps such as Messages and FaceTime [2].\n\n### Design Evolution\nThe new design incorporates \"Liquid Glass,\" contributing to a more aesthetically pleasing and expressive interface for both apps and system experiences [3]. This design choice is intended to bring greater focus to content, making interactions more intuitive and engaging [3].\n\n## References\n[1] Apple Unveils iPhone 17 Pro and iPhone 17 Pro Max - https://www.apple.com/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max/\n[2] iOS 26 Features and Improvements - https://support.apple.com/en-us/121161\n[3] Best iPhone: Features and Updates - https://www.cnet.com/tech/mobile/best-iphone/",
+  "citations": [
+    {
+      "text": "[1]",
+      "url": "https://apple.com/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max/",
+      "entity": "Apple",
+      "confidence": 0.8,
+      "position": null,
+      "context": "and Improvements  ### iOS 26 Enhancements iOS 26 elevates the overall iPhone experience with meaningful improvements to core applications and system functions [1]. This update aims to make the user experience more expressive and delightful, ensuring content remains the central focus while maintaining the familiar iOS int",
+      "domain": "apple.com"
+    },
+    {
+      "text": "[3]",
+      "url": "https://cnet.com/tech/mobile/best-iphone/",
+      "entity": "Apple",
+      "confidence": 0.8,
+      "position": null,
+      "context": "update aims to make the user experience more expressive and delightful, ensuring content remains the central focus while maintaining the familiar iOS interface [3].  ### Apple Intelligence A major addition is the integration of powerful Apple Intelligence capabilities. This includes features like Live Translation, which a",
+      "domain": "cnet.com"
+    },
+    {
+      "text": "[2]",
+      "url": "https://support.apple.com/en-us/121161",
+      "entity": "Apple",
+      "confidence": 0.8,
+      "position": null,
+      "context": "integration of powerful Apple Intelligence capabilities. This includes features like Live Translation, which allows for on-the-go translation of text and audio [2]. This functionality is designed to facilitate communication across different languages within apps such as Messages and FaceTime [2].  ### Design Evolution The",
+      "domain": "support.apple.com"
+    }
+  ],
+  "mentions": [
+    {
+      "text": "Apple's",
+      "type": "unlinked",
+      "position": 0,
+      "context": "Apple's latest iPhone experience is significantly enhanced by iOS 26, introducing a red",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 87
+    },
+    {
+      "text": "Apple",
+      "type": "linked",
+      "position": 533,
+      "context": "emains the central focus while maintaining the familiar iOS interface [3].  ### Apple Intelligence A major addition is the integration of powerful Apple Intelligence",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 165
+    },
+    {
+      "text": "Apple",
+      "type": "linked",
+      "position": 600,
+      "context": "ce [3].  ### Apple Intelligence A major addition is the integration of powerful Apple Intelligence capabilities. This includes features like Live Translation, which",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 164
+    },
+    {
+      "text": "Apple",
+      "type": "linked",
+      "position": 1191,
+      "context": "ontent, making interactions more intuitive and engaging [3].  ## References [1] Apple Unveils iPhone 17 Pro and iPhone 17 Pro Max - https://www.apple.com/newsroom/20",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 165
+    },
+    {
+      "text": "apple",
+      "type": "linked",
+      "position": 1255,
+      "context": "References [1] Apple Unveils iPhone 17 Pro and iPhone 17 Pro Max - https://www.apple.com/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max/ [2] iOS",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 164
+    },
+    {
+      "text": "apple",
+      "type": "linked",
+      "position": 1282,
+      "context": "ls iPhone 17 Pro and iPhone 17 Pro Max - https://www.apple.com/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max/ [2] iOS 26 Features and Improvemen",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 165
+    },
+    {
+      "text": "apple",
+      "type": "linked",
+      "position": 1388,
+      "context": "o-and-iphone-17-pro-max/ [2] iOS 26 Features and Improvements - https://support.apple.com/en-us/121161 [3] Best iPhone: Features and Updates - https://www.cnet.com/t",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 165
+    }
+  ],
+  "owned_sources": [
+    "https://apple.com/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max/",
+    "https://support.apple.com/en-us/121161"
+  ],
+  "sources": [
+    "https://cnet.com/tech/mobile/best-iphone/"
+  ],
+  "metadata": {
+    "performance": {
+      "total_time_ms": 12647.856855997816,
+      "search_time_ms": 7732.830822002143,
+      "compression_time_ms": 197.08825298584998,
+      "llm_time_ms": 4714.135428017471,
+      "extraction_time_ms": 3.6495609674602747,
+      "total_tokens": 1868,
+      "total_cost_usd": 4.1e-05,
+      "api_calls": {
+        "search": 1,
+        "llm": 1
+      }
+    },
+    "search": {
+      "max_searches": 3,
+      "actual_searches": 1,
+      "max_cost": 1.0,
+      "actual_cost": 0.0
+    },
+    "compression": {
+      "compression_ratio": 0.25316455696202533,
+      "quality_score": 0.37939999999999996,
+      "original_tokens": 632,
+      "compressed_tokens": 472
+    },
+    "llm": {
+      "model": "models/gemini-2.5-flash",
+      "prompt_tokens": 1538,
+      "completion_tokens": 330,
+      "total_tokens": 1868,
+      "cost_usd": 4.1e-05,
+      "generation_time_ms": 4713.028232974466,
+      "temperature": 0.7
+    }
+  },
+  "advanced_metrics": {
+    "visibility_score": 10.0,
+    "share_of_voice": 1.0,
+    "position_adjusted_score": 8.0,
+    "total_mentions": 7,
+    "brand_mentions": 7,
+    "competitor_mentions": 0,
+    "citations_count": 3,
+    "entities_count": 7,
+    "competitive_analysis": {
+      "brand_dominance_ratio": 1.0,
+      "mention_efficiency": 2.3333333333333335
+    }
+  },
+  "brand_name": "Apple",
+  "brand_domain": "apple.com",
+  "query": "What are the latest iPhone features and improvements?",
+  "created_at": "2025-09-29T06:16:24.835711Z",
+  "total_citations": 3,
+  "total_mentions": 7,
+  "owned_citation_count": 2,
+  "visibility_summary": {
+    "total_citations": 3,
+    "total_mentions": 7,
+    "owned_citations": 2,
+    "total_sources": 3,
+    "owned_sources_percentage": 66.67,
+    "linked_mentions": 6,
+    "unlinked_mentions": 1
+  }
+}

@@ -1,0 +1,33 @@
+# BrandLens Dependencies
+# Core requirements for production deployment
+
+# Core framework dependencies
+click>=8.1.0
+rich>=13.7.0
+pydantic>=2.5.0
+python-dotenv>=1.0.0
+
+# LLM and Search API clients
+google-generativeai>=0.3.0
+tavily-python>=0.3.0
+
+# Token optimization and NLP
+tiktoken>=0.5.0
+spacy>=3.7.0
+
+# HTTP and async support
+httpx>=0.25.0
+aiofiles>=23.2.0
+
+# Utilities and reliability
+tenacity>=8.2.0
+jsonschema>=4.20.0
+
+# Development dependencies (install with: pip install -e ".[dev]")
+# pytest>=7.4.0
+# pytest-asyncio>=0.21.0
+# pytest-cov>=4.1.0
+# black>=23.9.0
+# flake8>=6.1.0
+# mypy>=1.6.0
+# pre-commit>=3.5.0

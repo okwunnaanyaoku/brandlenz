@@ -1,0 +1,157 @@
+2025-09-30 00:05:32,322 - src.analyzer - INFO - BrandAnalyzer initialized: compression=True, model=models/gemini-2.5-flash, target_ratio=0.25, performance_optimizations=enabled
+╭─────────────────────────── Analysis Configuration ───────────────────────────╮
+│ Starting Brand Visibility Analysis                                           │
+│                                                                              │
+│ Brand: Apple (apple.com)                                                     │
+│ Query: What are the best smartphones?                                        │
+│ Competitors: Samsung,Google                                                  │
+│ Model: models/gemini-2.5-flash                                               │
+│ Max Sources: 3                                                               │
+│ Compression: True (25% target)                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────── Environment Configuration ──────────────────────────╮
+│ Compression Ratio: 25.0% (from .env config)                                  │
+│ Model: models/gemini-2.5-flash (from .env)                                   │
+│ Cache Enabled: True                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+2025-09-30 00:05:32,325 - src.analyzer - INFO - Starting brand visibility analysis for 'Apple' with query: 'What are the best smartphones?'
+2025-09-30 00:05:37,011 - httpx - INFO - HTTP Request: POST https://api.tavily.com/search "HTTP/1.1 200 OK"
+2025-09-30 00:05:37,145 - src.search.tavily_client - INFO - Tavily request succeeded
+2025-09-30 00:05:37,146 - src.analyzer - INFO - 🔍 TAVILY RETURNED 3 results with max_results=3
+2025-09-30 00:05:37,146 - src.analyzer - INFO -   Source 1: https://www.cnet.com/tech/mobile/best-iphone/
+2025-09-30 00:05:37,146 - src.analyzer - INFO -   Source 2: https://www.zdnet.com/article/best-iphone/
+2025-09-30 00:05:37,146 - src.analyzer - INFO -   Source 3: https://www.engadget.com/mobile/smartphones/best-iphone-160012979.html
+2025-09-30 00:05:37,146 - src.analyzer - INFO - Search returned 3 sources with max_sources=3
+2025-09-30 00:05:37,428 - src.optimization.token_counter - INFO - TokenCounter initialized with cache size: 500, metrics: True
+2025-09-30 00:05:37,429 - src.optimization.semantic_chunker - INFO - SemanticChunker initialized: 3 brands, target compression: 25.0%, caching: True
+2025-09-30 00:05:37,431 - src.optimization.semantic_chunker - INFO - Chunked content: 2 chunks, 201 tokens, 2 brand chunks, 0 citation chunks in 2.36ms
+2025-09-30 00:05:37,432 - src.optimization.semantic_chunker - INFO - Selected 1/2 chunks (72/201 tokens, 64.2% compression) in 0.34ms
+2025-09-30 00:05:37,432 - src.analyzer - INFO - Content compressed: 0.0% reduction, quality score: 0.54
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1759187137.458984    8800 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+2025-09-30 00:05:42,269 - src.llm.gemini_client - INFO - Gemini response generated
+2025-09-30 00:05:42,277 - src.analyzer - INFO - Brand analysis completed in 9952.80ms: 3 citations, 2 mentions, $0.0000 cost
+{
+  "human_response_markdown": "Based on recent analysis, Apple's iPhone lineup features prominently among the best smartphones available, with specific models catering to different user needs and preferences.\n\n## Top Smartphone Recommendations\n\n### Best for Most Users\nThe iPhone 17 is identified as the best iPhone for most consumers, offering a compelling balance of features and value [1]. This model shares many capabilities with Apple's more premium 17 Pro models but is available at a lower starting price of $829 [2].\n\n### Overall Top Performer\nFor users seeking the absolute best, the iPhone 17 Pro Max stands out as the top iPhone overall [3]. Its superior specifications and \"supersized attributes\" contribute to its leading position in the lineup.\n\n### Considerations\nThe new iPhone Air, an ultra-thin model replacing the older \"Plus\" designation, is noted as having limited advantages over the standard iPhone 17 or iPhone 17 Pro [1].\n\n## References\n[1] The best iPhone for most people is the iPhone 17 - https://www.cnet.com/tech/mobile/best-iphone/\n[2] The best iPhone for most people is the iPhone 17 - https://www.zdnet.com/article/best-iphone/\n[3] The best iPhone for most people is the iPhone 17 - https://www.engadget.com/mobile/smartphones/best-iphone-160012979.html",
+  "citations": [
+    {
+      "text": "[1]",
+      "url": "https://cnet.com/tech/mobile/best-iphone/",
+      "entity": "Apple",
+      "confidence": 0.8,
+      "position": null,
+      "context": "Recommendations  ### Best for Most Users The iPhone 17 is identified as the best iPhone for most consumers, offering a compelling balance of features and value [1]. This model shares many capabilities with Apple's more premium 17 Pro models but is available at a lower starting price of $829 [2].  ### Overall Top Performer",
+      "domain": "cnet.com"
+    },
+    {
+      "text": "[2]",
+      "url": "https://zdnet.com/article/best-iphone/",
+      "entity": "Apple",
+      "confidence": 0.8,
+      "position": null,
+      "context": "lance of features and value [1]. This model shares many capabilities with Apple's more premium 17 Pro models but is available at a lower starting price of $829 [2].  ### Overall Top Performer For users seeking the absolute best, the iPhone 17 Pro Max stands out as the top iPhone overall [3]. Its superior specifications an",
+      "domain": "zdnet.com"
+    },
+    {
+      "text": "[3]",
+      "url": "https://engadget.com/mobile/smartphones/best-iphone-160012979.html",
+      "entity": "Apple",
+      "confidence": 0.5,
+      "position": null,
+      "context": "a lower starting price of $829 [2].  ### Overall Top Performer For users seeking the absolute best, the iPhone 17 Pro Max stands out as the top iPhone overall [3]. Its superior specifications and \"supersized attributes\" contribute to its leading position in the lineup.  ### Considerations The new iPhone Air, an ultra-thi",
+      "domain": "engadget.com"
+    }
+  ],
+  "mentions": [
+    {
+      "text": "Apple's",
+      "type": "linked",
+      "position": 26,
+      "context": "Based on recent analysis, Apple's iPhone lineup features prominently among the best smartphones available, with s",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 113
+    },
+    {
+      "text": "Apple's",
+      "type": "linked",
+      "position": 403,
+      "context": "ing balance of features and value [1]. This model shares many capabilities with Apple's more premium 17 Pro models but is available at a lower starting price of $829 [",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 167
+    }
+  ],
+  "owned_sources": [],
+  "sources": [
+    "https://cnet.com/tech/mobile/best-iphone/",
+    "https://zdnet.com/article/best-iphone/",
+    "https://engadget.com/mobile/smartphones/best-iphone-160012979.html"
+  ],
+  "metadata": {
+    "performance": {
+      "total_time_ms": 9952.796240977477,
+      "search_time_ms": 4821.628192963544,
+      "compression_time_ms": 285.85679904790595,
+      "llm_time_ms": 4837.207510019653,
+      "extraction_time_ms": 7.936239009723067,
+      "total_tokens": 2087,
+      "total_cost_usd": 4.5e-05,
+      "api_calls": {
+        "search": 1,
+        "llm": 1
+      }
+    },
+    "search": {
+      "max_searches": 3,
+      "actual_searches": 1,
+      "max_cost": 1.0,
+      "actual_cost": 0.0
+    },
+    "compression": {
+      "compression_ratio": 0.0,
+      "quality_score": 0.5371333333333334,
+      "original_tokens": 201,
+      "compressed_tokens": 201
+    },
+    "llm": {
+      "model": "models/gemini-2.5-flash",
+      "prompt_tokens": 1779,
+      "completion_tokens": 308,
+      "total_tokens": 2087,
+      "cost_usd": 4.5e-05,
+      "generation_time_ms": 4835.535216028802,
+      "temperature": 0.7
+    }
+  },
+  "advanced_metrics": {
+    "visibility_score": 8.5,
+    "share_of_voice": 1.0,
+    "position_adjusted_score": 6.800000000000001,
+    "total_mentions": 2,
+    "brand_mentions": 2,
+    "competitor_mentions": 0,
+    "citations_count": 3,
+    "entities_count": 2,
+    "competitive_analysis": {
+      "brand_dominance_ratio": 1.0,
+      "mention_efficiency": 0.6666666666666666
+    }
+  },
+  "brand_name": "Apple",
+  "brand_domain": "apple.com",
+  "query": "What are the best smartphones?",
+  "created_at": "2025-09-29T23:05:42.277879Z",
+  "total_citations": 3,
+  "total_mentions": 2,
+  "owned_citation_count": 0,
+  "visibility_summary": {
+    "total_citations": 3,
+    "total_mentions": 2,
+    "owned_citations": 0,
+    "total_sources": 3,
+    "owned_sources_percentage": 0.0,
+    "linked_mentions": 2,
+    "unlinked_mentions": 0
+  }
+}

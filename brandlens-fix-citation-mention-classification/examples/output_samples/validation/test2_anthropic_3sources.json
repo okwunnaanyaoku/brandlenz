@@ -1,0 +1,212 @@
+2025-09-30 00:03:47,962 - src.analyzer - INFO - BrandAnalyzer initialized: compression=True, model=models/gemini-2.5-flash, target_ratio=0.25, performance_optimizations=enabled
+╭─────────────────────────── Analysis Configuration ───────────────────────────╮
+│ Starting Brand Visibility Analysis                                           │
+│                                                                              │
+│ Brand: Anthropic (anthropic.com)                                             │
+│ Query: What is Anthropic's approach to AI safety?                            │
+│ Competitors: None                                                            │
+│ Model: models/gemini-2.5-flash                                               │
+│ Max Sources: 3                                                               │
+│ Compression: True (25% target)                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────── Environment Configuration ──────────────────────────╮
+│ Compression Ratio: 25.0% (from .env config)                                  │
+│ Model: models/gemini-2.5-flash (from .env)                                   │
+│ Cache Enabled: True                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+2025-09-30 00:03:47,967 - src.analyzer - INFO - Starting brand visibility analysis for 'Anthropic' with query: 'What is Anthropic's approach to AI safety?'
+2025-09-30 00:03:50,111 - httpx - INFO - HTTP Request: POST https://api.tavily.com/search "HTTP/1.1 200 OK"
+2025-09-30 00:03:50,179 - src.search.tavily_client - INFO - Tavily request succeeded
+2025-09-30 00:03:50,180 - src.analyzer - INFO - 🔍 TAVILY RETURNED 3 results with max_results=3
+2025-09-30 00:03:50,180 - src.analyzer - INFO -   Source 1: https://www.anthropic.com/news/core-views-on-ai-safety
+2025-09-30 00:03:50,180 - src.analyzer - INFO -   Source 2: https://www.lesswrong.com/posts/xhKr5KtvdJRssMeJ3/anthropic-s-core-views-on-ai-safety
+2025-09-30 00:03:50,180 - src.analyzer - INFO -   Source 3: https://www.linkedin.com/pulse/overview-anthropics-ai-safety-levels-asl-framework-nancy-br6ve
+2025-09-30 00:03:50,180 - src.analyzer - INFO - Search returned 3 sources with max_sources=3
+2025-09-30 00:03:50,391 - src.optimization.token_counter - INFO - TokenCounter initialized with cache size: 500, metrics: True
+2025-09-30 00:03:50,391 - src.optimization.semantic_chunker - INFO - SemanticChunker initialized: 1 brands, target compression: 25.0%, caching: True
+2025-09-30 00:03:50,395 - src.optimization.semantic_chunker - INFO - Chunked content: 3 chunks, 620 tokens, 3 brand chunks, 0 citation chunks in 3.73ms
+2025-09-30 00:03:50,396 - src.optimization.semantic_chunker - INFO - Selected 1/3 chunks (456/620 tokens, 26.5% compression) in 0.08ms
+2025-09-30 00:03:50,396 - src.analyzer - INFO - Content compressed: 26.5% reduction, quality score: 0.69
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1759187030.414614    8684 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+2025-09-30 00:03:56,432 - src.llm.gemini_client - INFO - Gemini response generated
+2025-09-30 00:03:56,439 - src.analyzer - INFO - Brand analysis completed in 8472.29ms: 3 citations, 8 mentions, $0.0000 cost
+{
+  "human_response_markdown": "Anthropic is committed to an empirically-driven approach to AI safety [1]. This methodology focuses on practical, evidence-based techniques to ensure the responsible development and deployment of artificial intelligence.\n\n## Core Pillars of AI Safety\n\nAnthropic's work spans several key areas designed to build robust and safe AI systems:\n\n*   **Understanding and Generalization:** A significant focus is placed on improving the understanding of how AI systems learn and how they generalize to real-world scenarios [2].\n*   **Scalable Oversight:** They are developing techniques for scalable oversight and review of AI systems, aiming to effectively monitor and guide increasingly complex models [2].\n*   **Transparency and Interpretability:** Efforts are directed towards creating AI systems that are transparent and interpretable, allowing for a clearer understanding of their internal workings and decision-making processes [3].\n*   **Process-Oriented Training:** Anthropic trains AI systems to follow safe processes rather than solely pursuing specific outcomes, which helps in mitigating unintended consequences [3].\n*   **Failure Mode Analysis:** The company actively analyzes potential dangerous failure modes of AI and develops strategies to prevent them [1].\n*   **System Evaluation:** Comprehensive evaluation of AI systems is conducted to assess their safety and alignment with human values [1].\n\n## References\n[1] Anthropic's Core Views on AI Safety - https://www.anthropic.com/news/core-views-on-ai-safety\n[2] Anthropic's Core Views on AI Safety - https://www.lesswrong.com/posts/xhKr5KtvdJRssMeJ3/anthropic-s-core-views-on-ai-safety\n[3] Overview of Anthropic's AI Safety Levels (ASL) Framework - https://www.linkedin.com/pulse/overview-anthropics-ai-safety-levels-asl-framework-nancy-br6ve",
+  "citations": [
+    {
+      "text": "[1]",
+      "url": "https://anthropic.com/news/core-views-on-ai-safety",
+      "entity": "Anthropic",
+      "confidence": 0.8,
+      "position": null,
+      "context": "Anthropic is committed to an empirically-driven approach to AI safety [1]. This methodology focuses on practical, evidence-based techniques to ensure the responsible development and deployment of artificial intelligence.  ## Core Pil",
+      "domain": "anthropic.com"
+    },
+    {
+      "text": "[2]",
+      "url": "https://lesswrong.com/posts/xhKr5KtvdJRssMeJ3/anthropic-s-core-views-on-ai-safety",
+      "entity": "Anthropic",
+      "confidence": 0.8,
+      "position": null,
+      "context": "ding and Generalization:** A significant focus is placed on improving the understanding of how AI systems learn and how they generalize to real-world scenarios [2]. *   **Scalable Oversight:** They are developing techniques for scalable oversight and review of AI systems, aiming to effectively monitor and guide increasing",
+      "domain": "lesswrong.com"
+    },
+    {
+      "text": "[3]",
+      "url": "https://linkedin.com/pulse/overview-anthropics-ai-safety-levels-asl-framework-nancy-br6ve",
+      "entity": "Anthropic",
+      "confidence": 0.8,
+      "position": null,
+      "context": "wards creating AI systems that are transparent and interpretable, allowing for a clearer understanding of their internal workings and decision-making processes [3]. *   **Process-Oriented Training:** Anthropic trains AI systems to follow safe processes rather than solely pursuing specific outcomes, which helps in mitigati",
+      "domain": "linkedin.com"
+    }
+  ],
+  "mentions": [
+    {
+      "text": "Anthropic",
+      "type": "linked",
+      "position": 0,
+      "context": "Anthropic is committed to an empirically-driven approach to AI safety [1]. This methodolo",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 89
+    },
+    {
+      "text": "Anthropic's",
+      "type": "unlinked",
+      "position": 252,
+      "context": "pment and deployment of artificial intelligence.  ## Core Pillars of AI Safety  Anthropic's work spans several key areas designed to build robust and safe AI systems:  *",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 169
+    },
+    {
+      "text": "Anthropic",
+      "type": "linked",
+      "position": 967,
+      "context": "workings and decision-making processes [3]. *   **Process-Oriented Training:** Anthropic trains AI systems to follow safe processes rather than solely pursuing specific",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 168
+    },
+    {
+      "text": "Anthropic's",
+      "type": "unlinked",
+      "position": 1426,
+      "context": "to assess their safety and alignment with human values [1].  ## References [1] Anthropic's Core Views on AI Safety - https://www.anthropic.com/news/core-views-on-ai-safet",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 170
+    },
+    {
+      "text": "anthropic",
+      "type": "linked",
+      "position": 1476,
+      "context": "alues [1].  ## References [1] Anthropic's Core Views on AI Safety - https://www.anthropic.com/news/core-views-on-ai-safety [2] Anthropic's Core Views on AI Safety - http",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 169
+    },
+    {
+      "text": "Anthropic's",
+      "type": "unlinked",
+      "position": 1523,
+      "context": "Views on AI Safety - https://www.anthropic.com/news/core-views-on-ai-safety [2] Anthropic's Core Views on AI Safety - https://www.lesswrong.com/posts/xhKr5KtvdJRssMeJ3/ant",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 171
+    },
+    {
+      "text": "anthropic",
+      "type": "linked",
+      "position": 1611,
+      "context": "c's Core Views on AI Safety - https://www.lesswrong.com/posts/xhKr5KtvdJRssMeJ3/anthropic-s-core-views-on-ai-safety [3] Overview of Anthropic's AI Safety Levels (ASL) Fr",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 169
+    },
+    {
+      "text": "Anthropic's",
+      "type": "unlinked",
+      "position": 1663,
+      "context": "com/posts/xhKr5KtvdJRssMeJ3/anthropic-s-core-views-on-ai-safety [3] Overview of Anthropic's AI Safety Levels (ASL) Framework - https://www.linkedin.com/pulse/overview-anth",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 171
+    }
+  ],
+  "owned_sources": [
+    "https://anthropic.com/news/core-views-on-ai-safety"
+  ],
+  "sources": [
+    "https://lesswrong.com/posts/xhKr5KtvdJRssMeJ3/anthropic-s-core-views-on-ai-safety",
+    "https://linkedin.com/pulse/overview-anthropics-ai-safety-levels-asl-framework-nancy-br6ve"
+  ],
+  "metadata": {
+    "performance": {
+      "total_time_ms": 8472.286514006555,
+      "search_time_ms": 2212.9655839526094,
+      "compression_time_ms": 216.15083003416657,
+      "llm_time_ms": 6036.835979030002,
+      "extraction_time_ms": 6.171305023599416,
+      "total_tokens": 2112,
+      "total_cost_usd": 4.7e-05,
+      "api_calls": {
+        "search": 1,
+        "llm": 1
+      }
+    },
+    "search": {
+      "max_searches": 3,
+      "actual_searches": 1,
+      "max_cost": 1.0,
+      "actual_cost": 0.0
+    },
+    "compression": {
+      "compression_ratio": 0.2645161290322581,
+      "quality_score": 0.6859999999999999,
+      "original_tokens": 620,
+      "compressed_tokens": 456
+    },
+    "llm": {
+      "model": "models/gemini-2.5-flash",
+      "prompt_tokens": 1716,
+      "completion_tokens": 396,
+      "total_tokens": 2112,
+      "cost_usd": 4.7e-05,
+      "generation_time_ms": 6033.895372005645,
+      "temperature": 0.7
+    }
+  },
+  "advanced_metrics": {
+    "visibility_score": 10.0,
+    "share_of_voice": 1.0,
+    "position_adjusted_score": 8.0,
+    "total_mentions": 8,
+    "brand_mentions": 8,
+    "competitor_mentions": 0,
+    "citations_count": 3,
+    "entities_count": 8,
+    "competitive_analysis": {
+      "brand_dominance_ratio": 1.0,
+      "mention_efficiency": 2.6666666666666665
+    }
+  },
+  "brand_name": "Anthropic",
+  "brand_domain": "anthropic.com",
+  "query": "What is Anthropic's approach to AI safety?",
+  "created_at": "2025-09-29T23:03:56.439599Z",
+  "total_citations": 3,
+  "total_mentions": 8,
+  "owned_citation_count": 1,
+  "visibility_summary": {
+    "total_citations": 3,
+    "total_mentions": 8,
+    "owned_citations": 1,
+    "total_sources": 3,
+    "owned_sources_percentage": 33.33,
+    "linked_mentions": 4,
+    "unlinked_mentions": 4
+  }
+}

@@ -1,0 +1,232 @@
+2025-09-30 00:04:31,290 - src.analyzer - INFO - BrandAnalyzer initialized: compression=True, model=models/gemini-2.5-flash, target_ratio=0.25, performance_optimizations=enabled
+╭─────────────────────────── Analysis Configuration ───────────────────────────╮
+│ Starting Brand Visibility Analysis                                           │
+│                                                                              │
+│ Brand: Tesla (tesla.com)                                                     │
+│ Query: What are Tesla's latest electric vehicle features?                    │
+│ Competitors: None                                                            │
+│ Model: models/gemini-2.5-flash                                               │
+│ Max Sources: 5                                                               │
+│ Compression: True (25% target)                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────── Environment Configuration ──────────────────────────╮
+│ Compression Ratio: 25.0% (from .env config)                                  │
+│ Model: models/gemini-2.5-flash (from .env)                                   │
+│ Cache Enabled: True                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+2025-09-30 00:04:31,293 - src.analyzer - INFO - Starting brand visibility analysis for 'Tesla' with query: 'What are Tesla's latest electric vehicle features?'
+2025-09-30 00:04:45,274 - httpx - INFO - HTTP Request: POST https://api.tavily.com/search "HTTP/1.1 200 OK"
+2025-09-30 00:04:45,359 - src.search.tavily_client - INFO - Tavily request succeeded
+2025-09-30 00:04:45,360 - src.analyzer - INFO - 🔍 TAVILY RETURNED 5 results with max_results=5
+2025-09-30 00:04:45,360 - src.analyzer - INFO -   Source 1: https://pimpmyev.com/blogs/speed-style-carbon-fiber/exciting-new-tesla-updates-and-features-for-2025-what-to-expect?srsltid=AfmBOopvo15LyLi7bmhq4537PmqjLlQMXlXww-LlpAbCJFcXWnML6edx
+2025-09-30 00:04:45,360 - src.analyzer - INFO -   Source 2: https://www.youtube.com/watch?v=E2kNvpwJsVo
+2025-09-30 00:04:45,360 - src.analyzer - INFO -   Source 3: https://www.electriccarscheme.com/blog/new-tesla-model-y-juniper-refresh
+2025-09-30 00:04:45,360 - src.analyzer - INFO -   Source 4: https://www.tipranks.com/news/these-are-the-features-that-teslas-tsla-new-affordable-ev-might-remove
+2025-09-30 00:04:45,360 - src.analyzer - INFO -   Source 5: https://www.tesla.com/modely
+2025-09-30 00:04:45,360 - src.analyzer - INFO - Search returned 5 sources with max_sources=5
+2025-09-30 00:04:45,523 - src.optimization.token_counter - INFO - TokenCounter initialized with cache size: 500, metrics: True
+2025-09-30 00:04:45,523 - src.optimization.semantic_chunker - INFO - SemanticChunker initialized: 1 brands, target compression: 25.0%, caching: True
+2025-09-30 00:04:45,527 - src.optimization.semantic_chunker - INFO - Chunked content: 10 chunks, 1128 tokens, 9 brand chunks, 0 citation chunks in 3.34ms
+2025-09-30 00:04:45,527 - src.optimization.semantic_chunker - INFO - Selected 8/10 chunks (743/1128 tokens, 34.1% compression) in 0.08ms
+2025-09-30 00:04:45,529 - src.analyzer - INFO - Content compressed: 12.4% reduction, quality score: 0.52
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1759187085.546596    8742 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+2025-09-30 00:04:56,874 - src.llm.gemini_client - INFO - Gemini response generated
+2025-09-30 00:04:56,884 - src.analyzer - INFO - Brand analysis completed in 25590.94ms: 4 citations, 9 mentions, $0.0001 cost
+{
+  "human_response_markdown": "Tesla is updating its electric vehicle lineup with significant enhancements, focusing on design, performance, and charging capabilities. These updates are anticipated for the 2025 models, including the Model Y Juniper refresh, and are expected to be well-received by consumers [1].\n\n## Key Features and Updates\n\nThe latest Tesla models are set to include:\n\n*   **Refreshed Design and Interior:** A notable refreshed exterior design and an updated interior are part of the new features, aimed at modernizing the vehicle's aesthetic and user experience [2].\n*   **Improved Performance:** Enhancements to performance are expected, contributing to a more dynamic driving experience [1].\n*   **Extended Range:** The new vehicles are projected to offer a range of over 300 miles per charge, providing competitive long-distance travel capabilities [3].\n*   **Wireless Charging:** A significant technological addition is the inclusion of wireless charging contacts, offering greater convenience for users [4].\n\nThese comprehensive updates across design, performance, and charging are poised to make the 2025 Tesla models a strong offering in the EV market [5].\n\n## References\n[1] Exciting new Tesla updates and features for 2025 - https://pimpmyev.com/blogs/speed-style-carbon-fiber/exciting-new-tesla-updates-and-features-for-2025-what-to-expect?srsltid=AfmBOopvo15LyLi7bmhq4537PmqjLlQMXlXww-LlpAbCJFcXWnML6edx\n[2] New Tesla updates and features for 2025 - https://www.youtube.com/watch?v=E2kNvpwJsVo\n[3] New Tesla Model Y Juniper Refresh - https://www.electriccarscheme.com/blog/new-tesla-model-y-juniper-refresh\n[4] Features of Tesla's New Affordable EV - https://www.tipranks.com/news/these-are-the-features-that-teslas-tsla-new-",
+  "citations": [
+    {
+      "text": "[1]",
+      "url": "https://pimpmyev.com/blogs/speed-style-carbon-fiber/exciting-new-tesla-updates-and-features-for-2025-what-to-expect?srsltid=AfmBOopvo15LyLi7bmhq4537PmqjLlQMXlXww-LlpAbCJFcXWnML6edx",
+      "entity": "Tesla",
+      "confidence": 0.8,
+      "position": null,
+      "context": "rging capabilities. These updates are anticipated for the 2025 models, including the Model Y Juniper refresh, and are expected to be well-received by consumers [1].  ## Key Features and Updates  The latest Tesla models are set to include:  *   **Refreshed Design and Interior:** A notable refreshed exterior design and an u",
+      "domain": "pimpmyev.com"
+    },
+    {
+      "text": "[2]",
+      "url": "https://youtube.com/watch?v=E2kNvpwJsVo",
+      "entity": "Tesla",
+      "confidence": 0.8,
+      "position": null,
+      "context": "r:** A notable refreshed exterior design and an updated interior are part of the new features, aimed at modernizing the vehicle's aesthetic and user experience [2]. *   **Improved Performance:** Enhancements to performance are expected, contributing to a more dynamic driving experience [1]. *   **Extended Range:** The new",
+      "domain": "youtube.com"
+    },
+    {
+      "text": "[3]",
+      "url": "https://electriccarscheme.com/blog/new-tesla-model-y-juniper-refresh",
+      "entity": "Tesla",
+      "confidence": 0.8,
+      "position": null,
+      "context": ". *   **Extended Range:** The new vehicles are projected to offer a range of over 300 miles per charge, providing competitive long-distance travel capabilities [3]. *   **Wireless Charging:** A significant technological addition is the inclusion of wireless charging contacts, offering greater convenience for users [4].  T",
+      "domain": "electriccarscheme.com"
+    },
+    {
+      "text": "[4]",
+      "url": "https://tipranks.com/news/these-are-the-features-that-teslas-tsla-new-",
+      "entity": "Tesla",
+      "confidence": 0.8,
+      "position": null,
+      "context": "ies [3]. *   **Wireless Charging:** A significant technological addition is the inclusion of wireless charging contacts, offering greater convenience for users [4].  These comprehensive updates across design, performance, and charging are poised to make the 2025 Tesla models a strong offering in the EV market [5].  ## Ref",
+      "domain": "tipranks.com"
+    }
+  ],
+  "mentions": [
+    {
+      "text": "Tesla",
+      "type": "linked",
+      "position": 0,
+      "context": "Tesla is updating its electric vehicle lineup with significant enhancements, focusing",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 85
+    },
+    {
+      "text": "Tesla",
+      "type": "linked",
+      "position": 323,
+      "context": "to be well-received by consumers [1].  ## Key Features and Updates  The latest Tesla models are set to include:  *   **Refreshed Design and Interior:** A notable re",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 164
+    },
+    {
+      "text": "Tesla",
+      "type": "linked",
+      "position": 1100,
+      "context": "ve updates across design, performance, and charging are poised to make the 2025 Tesla models a strong offering in the EV market [5].  ## References [1] Exciting new",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 164
+    },
+    {
+      "text": "Tesla",
+      "type": "linked",
+      "position": 1185,
+      "context": "models a strong offering in the EV market [5].  ## References [1] Exciting new Tesla updates and features for 2025 - https://pimpmyev.com/blogs/speed-style-carbon-f",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 164
+    },
+    {
+      "text": "tesla",
+      "type": "linked",
+      "position": 1288,
+      "context": "res for 2025 - https://pimpmyev.com/blogs/speed-style-carbon-fiber/exciting-new-tesla-updates-and-features-for-2025-what-to-expect?srsltid=AfmBOopvo15LyLi7bmhq4537Pm",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 165
+    },
+    {
+      "text": "Tesla",
+      "type": "linked",
+      "position": 1412,
+      "context": "expect?srsltid=AfmBOopvo15LyLi7bmhq4537PmqjLlQMXlXww-LlpAbCJFcXWnML6edx [2] New Tesla updates and features for 2025 - https://www.youtube.com/watch?v=E2kNvpwJsVo [3]",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 165
+    },
+    {
+      "text": "Tesla",
+      "type": "linked",
+      "position": 1502,
+      "context": "tes and features for 2025 - https://www.youtube.com/watch?v=E2kNvpwJsVo [3] New Tesla Model Y Juniper Refresh - https://www.electriccarscheme.com/blog/new-tesla-mode",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 165
+    },
+    {
+      "text": "tesla",
+      "type": "linked",
+      "position": 1577,
+      "context": "New Tesla Model Y Juniper Refresh - https://www.electriccarscheme.com/blog/new-tesla-model-y-juniper-refresh [4] Features of Tesla's New Affordable EV - https://www",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 164
+    },
+    {
+      "text": "Tesla's",
+      "type": "unlinked",
+      "position": 1623,
+      "context": "ww.electriccarscheme.com/blog/new-tesla-model-y-juniper-refresh [4] Features of Tesla's New Affordable EV - https://www.tipranks.com/news/these-are-the-features-that-t",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 167
+    }
+  ],
+  "owned_sources": [],
+  "sources": [
+    "https://pimpmyev.com/blogs/speed-style-carbon-fiber/exciting-new-tesla-updates-and-features-for-2025-what-to-expect?srsltid=AfmBOopvo15LyLi7bmhq4537PmqjLlQMXlXww-LlpAbCJFcXWnML6edx",
+    "https://youtube.com/watch?v=E2kNvpwJsVo",
+    "https://electriccarscheme.com/blog/new-tesla-model-y-juniper-refresh",
+    "https://tipranks.com/news/these-are-the-features-that-teslas-tsla-new-"
+  ],
+  "metadata": {
+    "performance": {
+      "total_time_ms": 25590.944479976315,
+      "search_time_ms": 14066.883948049508,
+      "compression_time_ms": 169.10124401329085,
+      "llm_time_ms": 11344.893268018495,
+      "extraction_time_ms": 9.935001959092915,
+      "total_tokens": 2793,
+      "total_cost_usd": 6.1e-05,
+      "api_calls": {
+        "search": 1,
+        "llm": 1
+      }
+    },
+    "search": {
+      "max_searches": 3,
+      "actual_searches": 1,
+      "max_cost": 1.0,
+      "actual_cost": 0.0
+    },
+    "compression": {
+      "compression_ratio": 0.12411347517730496,
+      "quality_score": 0.5150714285714286,
+      "original_tokens": 1128,
+      "compressed_tokens": 988
+    },
+    "llm": {
+      "model": "models/gemini-2.5-flash",
+      "prompt_tokens": 2338,
+      "completion_tokens": 455,
+      "total_tokens": 2793,
+      "cost_usd": 6.1e-05,
+      "generation_time_ms": 11342.424844042398,
+      "temperature": 0.7
+    }
+  },
+  "advanced_metrics": {
+    "visibility_score": 10.0,
+    "share_of_voice": 1.0,
+    "position_adjusted_score": 8.0,
+    "total_mentions": 9,
+    "brand_mentions": 9,
+    "competitor_mentions": 0,
+    "citations_count": 4,
+    "entities_count": 9,
+    "competitive_analysis": {
+      "brand_dominance_ratio": 1.0,
+      "mention_efficiency": 2.25
+    }
+  },
+  "brand_name": "Tesla",
+  "brand_domain": "tesla.com",
+  "query": "What are Tesla's latest electric vehicle features?",
+  "created_at": "2025-09-29T23:04:56.884466Z",
+  "total_citations": 4,
+  "total_mentions": 9,
+  "owned_citation_count": 0,
+  "visibility_summary": {
+    "total_citations": 4,
+    "total_mentions": 9,
+    "owned_citations": 0,
+    "total_sources": 4,
+    "owned_sources_percentage": 0.0,
+    "linked_mentions": 8,
+    "unlinked_mentions": 1
+  }
+}

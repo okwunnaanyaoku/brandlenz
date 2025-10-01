@@ -1,0 +1,168 @@
+# BrandLens .gitignore
+
+# =============================================================================
+# ENVIRONMENT AND SECRETS
+# =============================================================================
+.env
+*.env
+!.env.example
+
+# API Keys and Secrets
+api_keys.txt
+secrets/
+credentials/
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# =============================================================================
+# TESTING AND COVERAGE
+# =============================================================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# =============================================================================
+# CACHING
+# =============================================================================
+.cache/
+.test_cache/
+*.cache
+brandlens_cache/
+
+# =============================================================================
+# LOGS
+# =============================================================================
+*.log
+logs/
+brandlens.log
+debug.log
+error.log
+
+# =============================================================================
+# DEVELOPMENT TOOLS
+# =============================================================================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+
+# =============================================================================
+# JUPYTER AND NOTEBOOKS
+# =============================================================================
+.ipynb_checkpoints
+*.ipynb
+
+# =============================================================================
+# EDITORS AND IDEs
+# =============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# AI Assistant / MCP Server Directories
+.claude/
+.serena/
+.codex/
+
+# =============================================================================
+# OS FILES
+# =============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# =============================================================================
+# TEMPORARY FILES
+# =============================================================================
+*.tmp
+*.temp
+.temporary/
+tmp/
+
+# =============================================================================
+# OUTPUT FILES
+# =============================================================================
+output/
+results/
+*.json.backup
+analysis_*.json
+
+# =============================================================================
+# SPACY MODELS (Downloaded)
+# =============================================================================
+# Keep model downloads in cache
+.spacy/
+
+# =============================================================================
+# BENCHMARKING AND PROFILING
+# =============================================================================
+*.prof
+.benchmarks/
+performance_logs/
+
+# =============================================================================
+# DOCKER
+# =============================================================================
+Dockerfile.local
+docker-compose.override.yml
+
+# =============================================================================
+# PROJECT-SPECIFIC CLEANUP
+# =============================================================================
+# Test scripts in root (should be in tests/)
+test_*.py
+debug_*.py
+
+# Temporary documentation and planning files
+AGENTS.md
+GEMINI.md
+REFACTORING_ANALYSIS.md
+TOKEN_COUNTER_IMPLEMENTATION.md
+COMPRESSION_QUALITY_IMPROVEMENTS.md
+PERFORMANCE_VALIDATION_REPORT.md
+VALIDATION_SUMMARY.md
+CITATION_REMEDIATION_PLAN.md
+prd.txt
+project_plan.md
+
+# Temporary output and analysis files
+output.json
+extract_metrics.py
+final_test.json
+test_output.json

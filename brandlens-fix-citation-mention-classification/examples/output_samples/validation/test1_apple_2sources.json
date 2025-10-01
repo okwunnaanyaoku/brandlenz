@@ -1,0 +1,153 @@
+2025-09-30 00:03:08,614 - src.analyzer - INFO - BrandAnalyzer initialized: compression=True, model=models/gemini-2.5-flash, target_ratio=0.25, performance_optimizations=enabled
+╭─────────────────────────── Analysis Configuration ───────────────────────────╮
+│ Starting Brand Visibility Analysis                                           │
+│                                                                              │
+│ Brand: Apple (apple.com)                                                     │
+│ Query: What are the latest iPhone features?                                  │
+│ Competitors: None                                                            │
+│ Model: models/gemini-2.5-flash                                               │
+│ Max Sources: 2                                                               │
+│ Compression: True (25% target)                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────── Environment Configuration ──────────────────────────╮
+│ Compression Ratio: 25.0% (from .env config)                                  │
+│ Model: models/gemini-2.5-flash (from .env)                                   │
+│ Cache Enabled: True                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+2025-09-30 00:03:08,620 - src.analyzer - INFO - Starting brand visibility analysis for 'Apple' with query: 'What are the latest iPhone features?'
+2025-09-30 00:03:21,823 - httpx - INFO - HTTP Request: POST https://api.tavily.com/search "HTTP/1.1 200 OK"
+2025-09-30 00:03:21,875 - src.search.tavily_client - INFO - Tavily request succeeded
+2025-09-30 00:03:21,876 - src.analyzer - INFO - 🔍 TAVILY RETURNED 2 results with max_results=2
+2025-09-30 00:03:21,876 - src.analyzer - INFO -   Source 1: https://www.apple.com/os/pdf/All_New_Features_iOS_26_Sept_2025.pdf
+2025-09-30 00:03:21,876 - src.analyzer - INFO -   Source 2: https://www.apple.com/newsroom/2025/09/apple-debuts-iphone-17/
+2025-09-30 00:03:21,876 - src.analyzer - INFO - Search returned 2 sources with max_sources=2
+2025-09-30 00:03:22,084 - src.optimization.token_counter - INFO - TokenCounter initialized with cache size: 500, metrics: True
+2025-09-30 00:03:22,084 - src.optimization.semantic_chunker - INFO - SemanticChunker initialized: 1 brands, target compression: 25.0%, caching: True
+2025-09-30 00:03:22,088 - src.optimization.semantic_chunker - INFO - Chunked content: 2 chunks, 561 tokens, 1 brand chunks, 0 citation chunks in 3.32ms
+2025-09-30 00:03:22,088 - src.optimization.semantic_chunker - INFO - Selected 1/2 chunks (273/561 tokens, 51.3% compression) in 0.09ms
+2025-09-30 00:03:22,088 - src.analyzer - INFO - Content compressed: 0.0% reduction, quality score: 0.48
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1759187002.110695    8625 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+2025-09-30 00:03:26,236 - src.llm.gemini_client - INFO - Gemini response generated
+2025-09-30 00:03:26,237 - src.extraction.citation_extractor - WARNING - Suspect path pattern detected in https://www.apple.com/os/pdf/All_New_Features_iOS_26_Sept_2025.pdf: matches /pdf/.*_\d{4}\.pdf$
+2025-09-30 00:03:26,239 - src.analyzer - WARNING - Citation extraction failed: Invalid URL detected: https://www.apple.com/os/pdf/All_New_Features_iOS_26_Sept_2025.pdf
+2025-09-30 00:03:26,240 - src.analyzer - INFO - Brand analysis completed in 17620.15ms: 0 citations, 5 mentions, $0.0000 cost
+{
+  "human_response_markdown": "Apple's latest iPhone features, introduced with iOS 26, focus on enhancing user experience across key applications like Music and Wallet.\n\n## Latest iOS 26 Features\n\nThe newest iteration of iOS brings several significant updates:\n\n*   **Enhanced Music Experience**: Users can now elevate their most-loved music to the top of their library for easier access through \"Pins\" [1]. Additionally, \"Enhanced Replay Insights\" offer month-by-month and year-end statistics directly within the app, providing a deeper understanding of listening habits [1].\n*   **Advanced Digital ID in Wallet**: The Wallet application has been upgraded to support a digital ID feature [2]. This allows users to create an ID with their passport, enabling seamless and secure identity verification at TSA checkpoints for domestic travel, as well as in apps and in person where ID verification is required [2].\n\n## References\n[1] All New Features iOS 26 Sept 2025 - https://www.apple.com/os/pdf/All_New_Features_iOS_26_Sept_2025.pdf\n[2] Apple debuts iPhone 17 - https://www.apple.com/newsroom/2025/09/apple-debuts-iphone-17/",
+  "citations": [],
+  "mentions": [
+    {
+      "text": "Apple's",
+      "type": "unlinked",
+      "position": 0,
+      "context": "Apple's latest iPhone features, introduced with iOS 26, focus on enhancing user experie",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 87
+    },
+    {
+      "text": "apple",
+      "type": "unlinked",
+      "position": 948,
+      "context": "equired [2].  ## References [1] All New Features iOS 26 Sept 2025 - https://www.apple.com/os/pdf/All_New_Features_iOS_26_Sept_2025.pdf [2] Apple debuts iPhone 17 - h",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 165
+    },
+    {
+      "text": "Apple",
+      "type": "unlinked",
+      "position": 1007,
+      "context": "t 2025 - https://www.apple.com/os/pdf/All_New_Features_iOS_26_Sept_2025.pdf [2] Apple debuts iPhone 17 - https://www.apple.com/newsroom/2025/09/apple-debuts-iphone-1",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 165
+    },
+    {
+      "text": "apple",
+      "type": "unlinked",
+      "position": 1044,
+      "context": "/All_New_Features_iOS_26_Sept_2025.pdf [2] Apple debuts iPhone 17 - https://www.apple.com/newsroom/2025/09/apple-debuts-iphone-17/",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 130
+    },
+    {
+      "text": "apple",
+      "type": "unlinked",
+      "position": 1071,
+      "context": "pt_2025.pdf [2] Apple debuts iPhone 17 - https://www.apple.com/newsroom/2025/09/apple-debuts-iphone-17/",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 103
+    }
+  ],
+  "owned_sources": [],
+  "sources": [],
+  "metadata": {
+    "performance": {
+      "total_time_ms": 17620.146922010463,
+      "search_time_ms": 13255.9687809553,
+      "compression_time_ms": 212.56502799224108,
+      "llm_time_ms": 4147.927288024221,
+      "extraction_time_ms": 3.452151024248451,
+      "total_tokens": 1811,
+      "total_cost_usd": 3.9e-05,
+      "api_calls": {
+        "search": 1,
+        "llm": 1
+      }
+    },
+    "search": {
+      "max_searches": 3,
+      "actual_searches": 1,
+      "max_cost": 1.0,
+      "actual_cost": 0.0
+    },
+    "compression": {
+      "compression_ratio": 0.0,
+      "quality_score": 0.48200000000000004,
+      "original_tokens": 561,
+      "compressed_tokens": 561
+    },
+    "llm": {
+      "model": "models/gemini-2.5-flash",
+      "prompt_tokens": 1541,
+      "completion_tokens": 270,
+      "total_tokens": 1811,
+      "cost_usd": 3.9e-05,
+      "generation_time_ms": 4146.350917988457,
+      "temperature": 0.7
+    }
+  },
+  "advanced_metrics": {
+    "visibility_score": 10.0,
+    "share_of_voice": 1.0,
+    "position_adjusted_score": 8.0,
+    "total_mentions": 5,
+    "brand_mentions": 5,
+    "competitor_mentions": 0,
+    "citations_count": 0,
+    "entities_count": 5,
+    "competitive_analysis": {
+      "brand_dominance_ratio": 1.0,
+      "mention_efficiency": 5.0
+    }
+  },
+  "brand_name": "Apple",
+  "brand_domain": "apple.com",
+  "query": "What are the latest iPhone features?",
+  "created_at": "2025-09-29T23:03:26.240292Z",
+  "total_citations": 0,
+  "total_mentions": 5,
+  "owned_citation_count": 0,
+  "visibility_summary": {
+    "total_citations": 0,
+    "total_mentions": 5,
+    "owned_citations": 0,
+    "total_sources": 0,
+    "owned_sources_percentage": 0.0,
+    "linked_mentions": 0,
+    "unlinked_mentions": 5
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "human_response_markdown": "Nike sells a wide array of athletic and casual footwear designed for various activities and daily comfort. While the brand has recently faced some challenges related to its overall reputation [1, 2], Nike continues to offer products globally, catering to different ages and nearly every major sport, with a significant portion of its shoes also worn for casual and leisure purposes .\n\nHere's a look at some of the types of shoes Nike sells, particularly focusing on road running and daily comfort:\n\n### Road Running Shoes\nNike offers a comprehensive lineup of road running shoes, each designed for specific performance needs [5]:\n\n*   **Best Overall:** The **Nike Pegasus 41** is considered a top choice for road running, known for its comfortable yet stable ride suitable for both beginners and experienced runners. It features plush ReactX foam and Air Zoom units for responsiveness [5].\n*   **Best Energy Return:** The **Nike ZoomX Streakfly** is a lightweight racing shoe commended for its speed and comfortable ride, making it excellent for various workouts [5].\n*   **Best for 5K/10K:** The **Nike Vaporfly 4** excels in shorter races, providing a balance of comfort and energy return with its ZoomX midsole and carbon plate [5].\n*   **Best for Marathon:** The **Nike Alphafly 3** is ideal for long distances, delivering propulsion, comfort, and stability with its ZoomX midsole, FlyPlate, and Air Pods [5].\n*   **Best Shock Absorption:** The **Nike Pegasus Premium** offers exceptional protection and luxurious comfort with its generous cushioning and full-length Air Zoom unit, making repetitive impacts more tolerable [5].\n*   **Best Traction:** The **Nike Invincible 3** is known for its stability and energy return, providing a controlled ride that's great for recovery days and long, easy runs [5].\n*   **Best Budget Option:** The **Nike Downshifter 13** stands out for its versatility and breathability at an affordable price, offering a comfortable and flexible ride suitable for walking and light running [5].\n\n### Shoes for Daily Wear and Comfort\nBeyond specialized athletic footwear, Nike also sells shoes that are highly suitable for everyday use and comfort. Many users seek Nike shoes that can support long hours of walking or standing without causing discomfort, highlighting the brand's offerings for general daily wear [4].",
+  "citations": [
+    {
+      "text": "[1]",
+      "url": "https://www.forbes.com/sites/pamdanziger/2024/11/04/nikes-reputation-falls-just-when-it-needs-a-strong-brand-reputation-most/",
+      "entities": [
+        "Nike"
+      ]
+    },
+    {
+      "text": "[2]",
+      "url": "https://www.comparably.com/brands/nike",
+      "entities": [
+        "Nike"
+      ]
+    },
+    {
+      "text": "[4]",
+      "url": "https://www.reddit.com/r/Nike/comments/19b14a0/best_nike_shoe_for_daily_wear_thats_comfortable/",
+      "entities": [
+        "Nike"
+      ]
+    },
+    {
+      "text": "[5]",
+      "url": "https://runrepeat.com/guides/best-nike-road-running-shoes",
+      "entities": [
+        "Nike"
+      ]
+    },
+    {
+      "text": "[6]",
+      "url": "https://www.start.io/blog/nike-target-market-analysis/",
+      "entities": [
+        "Nike"
+      ]
+    }
+  ],
+  "mentions": [
+    {
+      "text": "Nike",
+      "type": "unlinked",
+      "context": "Nike sells a wide array of athletic and casual footwear designed for various activit"
+    },
+    {
+      "text": "Nike",
+      "type": "linked",
+      "context": "nd has recently faced some challenges related to its overall reputation [1, 2], Nike continues to offer products globally, catering to different ages and nearly eve"
+    },
+    {
+      "text": "Nike",
+      "type": "linked",
+      "context": "r casual and leisure purposes [6].  Here's a look at some of the types of shoes Nike sells, particularly focusing on road running and daily comfort:  ### Road Runni"
+    },
+    {
+      "text": "Nike",
+      "type": "unlinked",
+      "context": "articularly focusing on road running and daily comfort:  ### Road Running Shoes Nike offers a comprehensive lineup of road running shoes, each designed for specific"
+    },
+    {
+      "text": "Nike",
+      "type": "linked",
+      "context": "each designed for specific performance needs [5]:  *   **Best Overall:** The **Nike Pegasus 41** is considered a top choice for road running, known for its comfort"
+    },
+    {
+      "text": "Nike",
+      "type": "linked",
+      "context": "am and Air Zoom units for responsiveness [5]. *   **Best Energy Return:** The **Nike ZoomX Streakfly** is a lightweight racing shoe commended for its speed and comf"
+    },
+    {
+      "text": "Nike",
+      "type": "linked",
+      "context": "e, making it excellent for various workouts [5]. *   **Best for 5K/10K:** The **Nike Vaporfly 4** excels in shorter races, providing a balance of comfort and energy"
+    },
+    {
+      "text": "Nike",
+      "type": "linked",
+      "context": "n with its ZoomX midsole and carbon plate [5]. *   **Best for Marathon:** The **Nike Alphafly 3** is ideal for long distances, delivering propulsion, comfort, and s"
+    },
+    {
+      "text": "Nike",
+      "type": "linked",
+      "context": "ZoomX midsole, FlyPlate, and Air Pods [5]. *   **Best Shock Absorption:** The **Nike Pegasus Premium** offers exceptional protection and luxurious comfort with its"
+    },
+    {
+      "text": "Nike",
+      "type": "linked",
+      "context": "nit, making repetitive impacts more tolerable [5]. *   **Best Traction:** The **Nike Invincible 3** is known for its stability and energy return, providing a contro"
+    },
+    {
+      "text": "Nike",
+      "type": "linked",
+      "context": "at for recovery days and long, easy runs [5]. *   **Best Budget Option:** The **Nike Downshifter 13** stands out for its versatility and breathability at an afforda"
+    },
+    {
+      "text": "Nike",
+      "type": "unlinked",
+      "context": "5].  ### Shoes for Daily Wear and Comfort Beyond specialized athletic footwear, Nike also sells shoes that are highly suitable for everyday use and comfort. Many us"
+    },
+    {
+      "text": "Nike",
+      "type": "unlinked",
+      "context": "ls shoes that are highly suitable for everyday use and comfort. Many users seek Nike shoes that can support long hours of walking or standing without causing discom"
+    }
+  ],
+  "owned_sources": [],
+  "sources": [
+    "https://www.forbes.com/sites/pamdanziger/2024/11/04/nikes-reputation-falls-just-when-it-needs-a-strong-brand-reputation-most/",
+    "https://www.comparably.com/brands/nike",
+    "https://www.researchgate.net/publication/361839396_The_brand_analysis_of_Nike_based_on_its_emotional_branding_and_marketing_strategies",
+    "https://www.reddit.com/r/Nike/comments/19b14a0/best_nike_shoe_for_daily_wear_thats_comfortable/",
+    "https://runrepeat.com/guides/best-nike-road-running-shoes",
+    "https://www.start.io/blog/nike-target-market-analysis/"
+  ],
+  "metadata": {
+    "performance": {
+      "total_time_ms": 68120.56410504738,
+      "search_time_ms": 2620.7858030102216,
+      "compression_time_ms": 88.10266200453043,
+      "llm_time_ms": 65398.78053497523,
+      "extraction_time_ms": 12.669707008171827,
+      "total_tokens": 15605,
+      "total_cost_usd": 0.000251,
+      "api_calls": {
+        "search": 1,
+        "llm": 1
+      }
+    },
+    "search": {
+      "max_searches": 1,
+      "actual_searches": 1,
+      "max_sources": 6,
+      "actual_sources": 6,
+      "max_cost": 0.5,
+      "actual_cost": 0.0
+    },
+    "compression": {
+      "compression_ratio": 0.2505379903989406,
+      "quality_score": 0.618210073326121,
+      "original_tokens": 12082,
+      "compressed_tokens": 9055
+    },
+    "llm": {
+      "model": "models/gemini-2.5-flash",
+      "prompt_tokens": 11697,
+      "completion_tokens": 680,
+      "cached_prompt_tokens": 3228,
+      "total_tokens": 15605,
+      "generation_time_ms": 65391.4875779883,
+      "cost_usd": 0.000251,
+      "temperature": 0.7
+    }
+  }
+}

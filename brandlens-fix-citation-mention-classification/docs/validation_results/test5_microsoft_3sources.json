@@ -1,0 +1,221 @@
+2025-09-30 00:05:55,638 - src.analyzer - INFO - BrandAnalyzer initialized: compression=True, model=models/gemini-2.5-flash, target_ratio=0.25, performance_optimizations=enabled
+╭─────────────────────────── Analysis Configuration ───────────────────────────╮
+│ Starting Brand Visibility Analysis                                           │
+│                                                                              │
+│ Brand: Microsoft (microsoft.com)                                             │
+│ Query: What are Microsoft's cloud computing services?                        │
+│ Competitors: None                                                            │
+│ Model: models/gemini-2.5-flash                                               │
+│ Max Sources: 3                                                               │
+│ Compression: True (25% target)                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────── Environment Configuration ──────────────────────────╮
+│ Compression Ratio: 25.0% (from .env config)                                  │
+│ Model: models/gemini-2.5-flash (from .env)                                   │
+│ Cache Enabled: True                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+2025-09-30 00:05:55,642 - src.analyzer - INFO - Starting brand visibility analysis for 'Microsoft' with query: 'What are Microsoft's cloud computing services?'
+2025-09-30 00:05:58,052 - httpx - INFO - HTTP Request: POST https://api.tavily.com/search "HTTP/1.1 200 OK"
+2025-09-30 00:05:58,210 - src.search.tavily_client - INFO - Tavily request succeeded
+2025-09-30 00:05:58,210 - src.analyzer - INFO - 🔍 TAVILY RETURNED 3 results with max_results=3
+2025-09-30 00:05:58,210 - src.analyzer - INFO -   Source 1: https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing
+2025-09-30 00:05:58,210 - src.analyzer - INFO -   Source 2: https://en.wikipedia.org/wiki/Microsoft_Azure
+2025-09-30 00:05:58,210 - src.analyzer - INFO -   Source 3: https://www.geeksforgeeks.org/devops/what-is-microsoft-azure/
+2025-09-30 00:05:58,211 - src.analyzer - INFO - Search returned 3 sources with max_sources=3
+2025-09-30 00:05:58,695 - src.optimization.token_counter - INFO - TokenCounter initialized with cache size: 500, metrics: True
+2025-09-30 00:05:58,696 - src.optimization.semantic_chunker - INFO - SemanticChunker initialized: 1 brands, target compression: 25.0%, caching: True
+2025-09-30 00:05:58,702 - src.optimization.semantic_chunker - INFO - Chunked content: 4 chunks, 531 tokens, 2 brand chunks, 0 citation chunks in 6.47ms
+2025-09-30 00:05:58,703 - src.optimization.semantic_chunker - INFO - Selected 3/4 chunks (248/531 tokens, 53.3% compression) in 0.12ms
+2025-09-30 00:05:58,703 - src.analyzer - INFO - Content compressed: 0.0% reduction, quality score: 0.35
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1759187158.732092    8857 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+2025-09-30 00:06:02,638 - src.llm.gemini_client - INFO - Gemini response generated
+2025-09-30 00:06:02,658 - src.analyzer - INFO - Brand analysis completed in 7015.24ms: 3 citations, 9 mentions, $0.0000 cost
+{
+  "human_response_markdown": "Microsoft is a prominent global provider of cloud computing services, catering to businesses of all sizes. Its primary offering in this domain is Microsoft Azure [1].\n\n## Microsoft Azure Overview\n\nMicrosoft Azure is the company's comprehensive cloud platform, delivering a wide range of cloud computing services [2]. These services are designed to support various business needs, from infrastructure as a service (IaaS) and platform as a service (PaaS) to software as a service (SaaS) solutions.\n\n## Competitive Positioning\n\nAzure is recognized as a leading cloud provider in the market and is frequently compared with other major platforms, such as Amazon Web Services (AWS) [3]. This comparison highlights Microsoft's competitive standing and the breadth of its cloud capabilities.\n\n## References\n[1] What is cloud computing? - https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing\n[2] Microsoft Azure - https://en.wikipedia.org/wiki/Microsoft_Azure\n[3] What is Microsoft Azure? - https://www.geeksforgeeks.org/devops/what-is-microsoft-azure/",
+  "citations": [
+    {
+      "text": "[1]",
+      "url": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing",
+      "entity": "Microsoft",
+      "confidence": 0.8,
+      "position": null,
+      "context": "crosoft is a prominent global provider of cloud computing services, catering to businesses of all sizes. Its primary offering in this domain is Microsoft Azure [1].  ## Microsoft Azure Overview  Microsoft Azure is the company's comprehensive cloud platform, delivering a wide range of cloud computing services [2]. These se",
+      "domain": "azure.microsoft.com"
+    },
+    {
+      "text": "[2]",
+      "url": "https://en.wikipedia.org/wiki/Microsoft_Azure",
+      "entity": "Microsoft",
+      "confidence": 0.8,
+      "position": null,
+      "context": "oft Azure [1].  ## Microsoft Azure Overview  Microsoft Azure is the company's comprehensive cloud platform, delivering a wide range of cloud computing services [2]. These services are designed to support various business needs, from infrastructure as a service (IaaS) and platform as a service (PaaS) to software as a servi",
+      "domain": "en.wikipedia.org"
+    },
+    {
+      "text": "[3]",
+      "url": "https://geeksforgeeks.org/devops/what-is-microsoft-azure/",
+      "entity": "Microsoft",
+      "confidence": 0.8,
+      "position": null,
+      "context": "tioning  Azure is recognized as a leading cloud provider in the market and is frequently compared with other major platforms, such as Amazon Web Services (AWS) [3]. This comparison highlights Microsoft's competitive standing and the breadth of its cloud capabilities.  ## References [1] What is cloud computing? - https://a",
+      "domain": "geeksforgeeks.org"
+    }
+  ],
+  "mentions": [
+    {
+      "text": "Microsoft",
+      "type": "linked",
+      "position": 0,
+      "context": "Microsoft is a prominent global provider of cloud computing services, catering to busines",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 89
+    },
+    {
+      "text": "Microsoft",
+      "type": "linked",
+      "position": 146,
+      "context": "es, catering to businesses of all sizes. Its primary offering in this domain is Microsoft Azure [1].  ## Microsoft Azure Overview  Microsoft Azure is the company's compr",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 169
+    },
+    {
+      "text": "Microsoft",
+      "type": "linked",
+      "position": 171,
+      "context": "s of all sizes. Its primary offering in this domain is Microsoft Azure [1].  ## Microsoft Azure Overview  Microsoft Azure is the company's comprehensive cloud platform,",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 168
+    },
+    {
+      "text": "Microsoft",
+      "type": "linked",
+      "position": 197,
+      "context": "y offering in this domain is Microsoft Azure [1].  ## Microsoft Azure Overview  Microsoft Azure is the company's comprehensive cloud platform, delivering a wide range of",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 169
+    },
+    {
+      "text": "Microsoft's",
+      "type": "linked",
+      "position": 708,
+      "context": "or platforms, such as Amazon Web Services (AWS) [3]. This comparison highlights Microsoft's competitive standing and the breadth of its cloud capabilities.  ## References",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 170
+    },
+    {
+      "text": "microsoft",
+      "type": "linked",
+      "position": 844,
+      "context": "cloud capabilities.  ## References [1] What is cloud computing? - https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing [2] Micr",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 169
+    },
+    {
+      "text": "Microsoft",
+      "type": "linked",
+      "position": 929,
+      "context": "soft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing [2] Microsoft Azure - https://en.wikipedia.org/wiki/Microsoft_Azure [3] What is Microsoft Azu",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 169
+    },
+    {
+      "text": "Microsoft",
+      "type": "linked",
+      "position": 1005,
+      "context": "[2] Microsoft Azure - https://en.wikipedia.org/wiki/Microsoft_Azure [3] What is Microsoft Azure? - https://www.geeksforgeeks.org/devops/what-is-microsoft-azure/",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 160
+    },
+    {
+      "text": "microsoft",
+      "type": "linked",
+      "position": 1069,
+      "context": "ure [3] What is Microsoft Azure? - https://www.geeksforgeeks.org/devops/what-is-microsoft-azure/",
+      "confidence": 1.0,
+      "sentiment": null,
+      "context_length": 96
+    }
+  ],
+  "owned_sources": [
+    "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing"
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Microsoft_Azure",
+    "https://geeksforgeeks.org/devops/what-is-microsoft-azure/"
+  ],
+  "metadata": {
+    "performance": {
+      "total_time_ms": 7015.238707012031,
+      "search_time_ms": 2568.0759089882486,
+      "compression_time_ms": 492.9823909769766,
+      "llm_time_ms": 3934.9278390291147,
+      "extraction_time_ms": 19.100153993349522,
+      "total_tokens": 1924,
+      "total_cost_usd": 4.1e-05,
+      "api_calls": {
+        "search": 1,
+        "llm": 1
+      }
+    },
+    "search": {
+      "max_searches": 3,
+      "actual_searches": 1,
+      "max_cost": 1.0,
+      "actual_cost": 0.0
+    },
+    "compression": {
+      "compression_ratio": 0.0,
+      "quality_score": 0.35285000000000005,
+      "original_tokens": 531,
+      "compressed_tokens": 531
+    },
+    "llm": {
+      "model": "models/gemini-2.5-flash",
+      "prompt_tokens": 1683,
+      "completion_tokens": 241,
+      "total_tokens": 1924,
+      "cost_usd": 4.1e-05,
+      "generation_time_ms": 3931.210526963696,
+      "temperature": 0.7
+    }
+  },
+  "advanced_metrics": {
+    "visibility_score": 10.0,
+    "share_of_voice": 1.0,
+    "position_adjusted_score": 8.0,
+    "total_mentions": 9,
+    "brand_mentions": 9,
+    "competitor_mentions": 0,
+    "citations_count": 3,
+    "entities_count": 9,
+    "competitive_analysis": {
+      "brand_dominance_ratio": 1.0,
+      "mention_efficiency": 3.0
+    }
+  },
+  "brand_name": "Microsoft",
+  "brand_domain": "microsoft.com",
+  "query": "What are Microsoft's cloud computing services?",
+  "created_at": "2025-09-29T23:06:02.658314Z",
+  "total_citations": 3,
+  "total_mentions": 9,
+  "owned_citation_count": 1,
+  "visibility_summary": {
+    "total_citations": 3,
+    "total_mentions": 9,
+    "owned_citations": 1,
+    "total_sources": 3,
+    "owned_sources_percentage": 33.33,
+    "linked_mentions": 9,
+    "unlinked_mentions": 0
+  }
+}
